@@ -67,12 +67,31 @@
 
 //9. Create Public and Views folders - add main.js and style.css to Public and index.ejs to Views
 
-//10. From root, init local git repo and commit
+//10. Add content to main.js, style.css, index.ejs
+    //index.ejs:
+    <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/public/style.css">
+            <title>*insert whtever*</title>
+        </head>
+        <body>
+           *insert whatever*
+            <script src="/public/main.js"></script>
+        </body>
+        </html>
+
+    //main.js:
+
 
 //11. Create heroku repo
 
+//remove .env from .gitignore before pushing to heroku
 // heroku login
-// heroku create simple-rap-api
+// heroku create *insert root folder name*
 // echo "web: node server.js" > Procfile
 // git add . 
 // git commit -m "changes"
