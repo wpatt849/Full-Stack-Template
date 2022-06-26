@@ -1,58 +1,67 @@
 //1. Initialize npm (npm = node package manager; npm init in terminal on the root folder) and install dependencies (npm install (or npm i) express, dotenv, cors, mongodb, ejs, npm install nodemon --save-dev)
 
-//dotenv hides sensitive files and can be added to gitignore
-//cors bypass cross origin requests in browsers
-//ejs helps dynamically generate html on the fly with server
-//nodemon helps update files without having to restart server
-//  --save-dev tells what is meant for developing and not for production
+    //dotenv hides sensitive files and can be added to gitignore
+    //cors bypass cross origin requests in browsers
+    //ejs helps dynamically generate html on the fly with server
+    //nodemon helps update files without having to restart server
+    //  --save-dev tells what is meant for developing and not for production
 
 //2. Require dependencies in server.js
-const express = require('express')
-const app = express()
-const cors = require('cors')
-const MongoClient = require('mongodb').MongoClient
-require('dotenv').config()
+    const express = require('express')
+    const app = express()
+    const cors = require('cors')
+    const MongoClient = require('mongodb').MongoClient
+    require('dotenv').config()
 
 //3. Create gitignore file and push to github
-touch .gitignore (in bash)
-//After creating repository on github:
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/wpatt849/Full-Stack-Template.git
-git push -u origin main
+    touch .gitignore (in bash)
+    //After creating repository on github:
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/wpatt849/*REPO NAME*.git
+    git push -u origin main
+
+    or if existing repo:
+    git remote add origin https://github.com/wpatt849/*REPO NAME.git
+    git branch -M main
+    git push -u origin main
 
 //4. Declare variables
-let(or const) db,
-    dbConnectionString = process.env.DB_STRING,
-    dbName = '(insert database name from MongoDB, either existing one or new)',
-    collection
+    let(or const) db,
+        dbConnectionString = process.env.DB_STRING,
+        dbName = '(insert database name from MongoDB, either existing one or new)',
+        collection
 
 
 
-//4. Connect to MongoDB - add connection string to .env file
-//in server.js, type in:
-    MongoClient.connect(dbConnectionString)
-        .then(client => {
-            console.log('Connected to Database')
-            db = client.db(dbName)
-            collection = db.collection('insert collections name from the collections in the dbName')
-        })       
-//click connect on MongoDB database, click connect application, copy and paste entire link in env
+//5. Connect to MongoDB - add connection string to .env file
+    //in server.js, type in:
+        MongoClient.connect(dbConnectionString)
+            .then(client => {
+                console.log('Connected to Database')
+                db = client.db(dbName)
+                collection = db.collection('insert collections name from the collections in the dbName')
+            })       
+    //click connect on MongoDB database, click connect application, copy and paste entire link in env
 
-//5. Add .env file to gitignore
+//6. Add .env file to gitignore
 
-//5. Create Port
+//7. Create Port
+    PORT = *type numbers(ex:8000)* in .env
+    app.listen(process.env.PORT || PORT, () => {
+        console.log(`Server is running ${process.env.PORT}`)
+    })
 
 //----Test Mongo and Port Connection
+    //in terminal: node server.js (or nodemon server.js after going to package.json, going to scripts object, adding "dev": "nodemon server.js")
+//8. Set middleware
 
-//6. Set middleware
+//9. Create Public and Views folders - add main.js and style.css to Public and index.ejs to Views
 
-//8. Create Public and Views folders - add main.js and style.css to Public and index.ejs to Views
+//10. From root, init local git repo and commit
 
-//9. From root, init local git repo and commit
-
-//10. Create heroku repo
+//11. Create heroku repo
 
 // heroku login
 // heroku create simple-rap-api
