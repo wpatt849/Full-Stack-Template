@@ -85,9 +85,18 @@
         </html>
 
     //main.js:
+    //fetch requests
 
+//11. Create get request in server.js
+    app.get('/', async(req,res) => {
+    try{
+        res.render('index.ejs')
+    }catch(error){
+        res.status(500).send({message: error.message})
+    }
+})
 
-//11. Create heroku repo
+//12. Create heroku repo
 
 //remove .env from .gitignore before pushing to heroku, add it back in after pushing to heroku
 // heroku login
