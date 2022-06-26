@@ -2,7 +2,7 @@
 
     //dotenv hides sensitive files and can be added to gitignore
     //cors bypass cross origin requests in browsers
-    //ejs helps dynamically generate html on the fly with server
+    //ejs helps with templating; dynamically generate html on the fly with server
     //nodemon helps update files without having to restart server
     //  --save-dev tells what is meant for developing and not for production
 
@@ -55,7 +55,15 @@
 
 //----Test Mongo and Port Connection
     //in terminal: node server.js (or nodemon server.js after going to package.json, going to scripts object, adding "dev": "nodemon server.js")
+
+
 //8. Set middleware
+    //set before CRUD applicatons(get, put, post, delete)
+    app.set('view engine', 'ejs')
+    app.use(express.static('public')) //setting up a public folder for css, main.js, etc 
+    app.use(express.urlencoded({extended:true})) //return middleware that parses urlencoded bodies; parses urls
+    app.use(express.json()) //help parses json and figures out to pull it part and get the necessary code
+
 
 //9. Create Public and Views folders - add main.js and style.css to Public and index.ejs to Views
 
