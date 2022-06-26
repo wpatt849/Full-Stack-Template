@@ -1,0 +1,44 @@
+//1. Initialize npm (npm = node package manager; npm init in terminal on the root folder) and install dependencies (npm install (or npm i) express, dotenv, cors, mongodb, ejs, npm install nodemon --save-dev)
+
+//dotenv hides sensitive files and can be added to gitignore
+//cors bypass cross origin requests in browsers
+//ejs helps dynamically generate html on the fly with server
+//nodemon helps update files without having to restart server
+//  --save-dev tells what is meant for developing and not for production
+
+//2. Require dependencies in server.js
+const express = require('express')
+const app = express()
+const cors = require('cors')
+const MongoClient = require('mongodb').MongoClient
+require('dotenv').config()
+
+
+//3. Declare variables
+
+//7. Create gitignore file and push to github
+
+//4. Connect to MongoDB - add connection string to .env file
+
+//5. Add .env file to gitignore
+
+//5. Create Port
+
+//----Test Mongo and Port Connection
+
+//6. Set middleware
+
+//8. Create Public and Views folders - add main.js and style.css to Public and index.ejs to Views
+
+//9. From root, init local git repo and commit
+
+//10. Create heroku repo
+
+// heroku login
+// heroku create simple-rap-api
+// echo "web: node server.js" > Procfile
+// git add . 
+// git commit -m "changes"
+// git push heroku main
+
+//----Test Heroku Link
