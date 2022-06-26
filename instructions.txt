@@ -89,9 +89,9 @@
 
 //11. Create heroku repo
 
-//remove .env from .gitignore before pushing to heroku
+//remove .env from .gitignore before pushing to heroku, add it back in after pushing to heroku
 // heroku login
-// heroku create *insert root folder name*
+// heroku create 
 // echo "web: node server.js" > Procfile
 // git add . 
 // git commit -m "changes"
