@@ -13,12 +13,32 @@ const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 
+//3. Create gitignore file and push to github
+touch .gitignore (in bash)
+//After creating repository on github:
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/wpatt849/Full-Stack-Template.git
+git push -u origin main
 
-//3. Declare variables
+//4. Declare variables
+let(or const) db,
+    dbConnectionString = process.env.DB_STRING,
+    dbName = '(insert database name from MongoDB, either existing one or new)',
+    collection
 
-//7. Create gitignore file and push to github
+
 
 //4. Connect to MongoDB - add connection string to .env file
+//in server.js, type in:
+    MongoClient.connect(dbConnectionString)
+        .then(client => {
+            console.log('Connected to Database')
+            db = client.db(dbName)
+            collection = db.collection('insert collections name from the collections in the dbName')
+        })       
+//click connect on MongoDB database, click connect application, copy and paste entire link in env
 
 //5. Add .env file to gitignore
 
